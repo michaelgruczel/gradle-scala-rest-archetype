@@ -37,18 +37,37 @@ The conversion from object to jason is done by jersey and jackson (see POJOMappi
 
 - check the documentation of the rest api
 The restapi is documented with swagger. call "http://localhost:8080/gradle-scala-rest-archetype/rest/api-docs.json/hello"
-and you will find the definition of the interface. This is done in code by annotations (set up in the web.xml).
-You can use the swagger-ui to make is more handy. Open "http://petstore.swagger.wordnik.com/" and
+and you will find the definition of the interface. This is done in code by annotations (take a look to web.xml, too).
+You can use the swagger-ui to make it more handy. Open "http://petstore.swagger.wordnik.com/" and
 replace "http://petstore.swagger.wordnik.com/api/api-docs.json" with "http://localhost:8080/gradle-scala-rest-archetype/rest/api-docs.json/hello"
 and clear the api-key field. If you like you can download (https://github.com/wordnik/swagger-ui) and customize the swagger-ui.
 Its a standalone javascript package to visualize and test the interfaces.
 
 - check the metrics
-everytime you call the helloworlda counter is increased (check Hello.scala). This is done by yammer.
-Yammer exposes metrics automatically ba jmx and healthpages.
+everytime you call helloworld a counter is increased (check Hello.scala). This is done by yammer.
+
+  ...
+  val counter = metrics.counter("helloCalls")
+  ...
+  counter += 1;
+  ...
+
+Yammer exposes metrics automatically by jmx and healthpages.
 In this example only a counter and a very general healthpage (MetricsServlet) is inserted.
+web.xml
+    ...
+    <servlet>
+        <servlet-name>MetricsServlet</servlet-name>
+        <servlet-class>com.yammer.metrics.reporting.MetricsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MetricsServlet</servlet-name>
+        <url-pattern>/metrics</url-pattern>
+    </servlet-mapping>
+    ...
+
 Open the metrics page by entering "http://localhost:8080/gradle-scala-rest-archetype/metrics".
-More informatio you can find under "http://metrics.codahale.com/getting-started/"
+More information you can find under "http://metrics.codahale.com/getting-started/"
 
 
 

@@ -1,1 +1,58 @@
-This file was created by IntelliJ IDEA 12.0 for binding GitHub repository
+
+
+This is an archetype for a project with a rest api with scala
+
+
+technology stack:
+- build tool: gradle
+- rest service: exposed by jetty-rs
+- json creation: jackson
+- rest-api doucumentation: swagger
+- monitoring: yammer
+- release artefact: war
+- release plattform: jetty
+
+Requirements:
+- its programmed in scala, so you need scala (e.g. 2.9.2) and java
+- its build with gradle, so you need groovy and gradle
+
+Getting started:
+
+- Building and start the service
+After installing everything, you should start the service:
+Go to the workspace location and type :"gradle jettyRun"
+The code will be compiled and the server will be started in a jetty.
+A list of gradle tasks you can get by "gradle task".
+The build logic is defined in build.gradle.
+The project supports java, scala and jetty.
+
+- make a hello world call
+enter "http://localhost:8080/gradle-scala-rest-archetype/rest/hello.json/info" in your browser
+or use wget or curl and you will get the HelloWorld as json
+The base path is defined in the web.xml as /rest/*. The services are searched in the main.scala.de.restapi package
+by annotation. Hello.scala is annotated with @Path("hello.json") and a doGet in Hello.scala is annotated with @Path("/info").
+That means the complete path is "http://localhost:8080/gradle-scala-rest-archetype/rest/hello.json/info"
+As return type json is given by annotation @Produces(Array("application/json")).
+The conversion from object to jason is done by jersey and jackson (see POJOMappingFeature in web.xml and HelloResponse annotations).
+
+- check the documentation of the rest api
+The restapi is documented with swagger. call "http://localhost:8080/gradle-scala-rest-archetype/rest/api-docs.json/hello"
+and you will find the definition of the interface. This is done in code by annotations (set up in the web.xml).
+You can use the swagger-ui to make is more handy. Open "http://petstore.swagger.wordnik.com/" and
+replace "http://petstore.swagger.wordnik.com/api/api-docs.json" with "http://localhost:8080/gradle-scala-rest-archetype/rest/api-docs.json/hello"
+and clear the api-key field. If you like you can download (https://github.com/wordnik/swagger-ui) and customize the swagger-ui.
+Its a standalone javascript package to visualize and test the interfaces.
+
+- check the metrics
+everytime you call the helloworlda counter is increased (check Hello.scala). This is done by yammer.
+Yammer exposes metrics automatically ba jmx and healthpages.
+In this example only a counter and a very general healthpage (MetricsServlet) is inserted.
+Open the metrics page by entering "http://localhost:8080/gradle-scala-rest-archetype/metrics".
+More informatio you can find under "http://metrics.codahale.com/getting-started/"
+
+
+
+
+
+
+

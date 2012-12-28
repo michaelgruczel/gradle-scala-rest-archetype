@@ -7,11 +7,11 @@ The aim of the project is to setup a technology stack which could be usefull for
 
 ### technology stack ###
 
-build tool: [gradle](http://www.gradle.org/)
-rest json service: exposed by jetty-rs, jackson
-rest-api doucumentation: [swagger](http://swagger.wordnik.com/)
-monitoring: [yammer](http://metrics.codahale.com/)
-release artefact: war
+build tool: [gradle](http://www.gradle.org/) -
+rest json service: exposed by jetty-rs, jackson -
+rest-api doucumentation: [swagger](http://swagger.wordnik.com/) -
+monitoring: [yammer](http://metrics.codahale.com/) -
+release artefact: war -
 release plattform: jetty
 
 

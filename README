@@ -14,13 +14,13 @@ technology stack:
 
 Requirements:
 - its programmed in scala, so you need scala (e.g. 2.9.2) and java
-- its build with gradle but gradle will be automatically downloaded by a wrapper if needed, so you do not install it
+- its build with gradle but gradle will be automatically downloaded by a wrapper if needed, so you do not need to install it
 
 Getting started:
 
 - Building and start the service
 After installing everything, you should start the service:
-Go to the workspace location and type :"gradlew jettyRun"
+Go to the workspace location and type :"./gradlew jettyRun"
 Gradle will be downloaded, the code will be compiled and the
 server will be started in a jetty.
 A list of gradle tasks you can get by "gradlew task".

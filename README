@@ -38,9 +38,11 @@ The conversion from object to jason is done by jersey and jackson (see POJOMappi
 - check the documentation of the rest api
 The restapi is documented with swagger. call "http://localhost:8080/gradle-scala-rest-archetype/rest/api-docs.json/hello"
 and you will find the definition of the interface. This is done in code by annotations (take a look to web.xml, too).
-You can use the swagger-ui to make it more handy. Open "http://petstore.swagger.wordnik.com/" and
+You can use the swagger-ui to make it more handy.
+A version is already included and can be entered by "http://localhost:8080/gradle-scala-rest-archetype/swagger-ui-1.1.7/index.html"
+Or you can open "http://petstore.swagger.wordnik.com/" and
 replace "http://petstore.swagger.wordnik.com/api/api-docs.json" with "http://localhost:8080/gradle-scala-rest-archetype/rest/api-docs.json/hello"
-and clear the api-key field. If you like you can download (https://github.com/wordnik/swagger-ui) and customize the swagger-ui.
+and clear the api-key field. If you like you can download (https://github.com/wordnik/swagger-ui) and customize the swagger-ui yourself.
 Its a standalone javascript package to visualize and test the interfaces.
 
 - check the metrics

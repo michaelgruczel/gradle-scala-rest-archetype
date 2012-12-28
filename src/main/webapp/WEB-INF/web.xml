@@ -41,13 +41,13 @@
 
 
     <servlet>
-        <servlet-name>MetricsServlet</servlet-name>
-        <servlet-class>com.yammer.metrics.reporting.MetricsServlet</servlet-class>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.yammer.metrics.reporting.AdminServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>MetricsServlet</servlet-name>
-        <url-pattern>/metrics</url-pattern>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin/*</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

@@ -53,20 +53,20 @@ everytime you call helloworld a counter is increased (check Hello.scala). This i
   ...
 
 Yammer exposes metrics automatically by jmx and healthpages.
-In this example only a counter and a very general healthpage (MetricsServlet) is inserted.
+In this example only a counter and a very general healthpage (AdminServlet) is inserted.
 web.xml
     ...
     <servlet>
-        <servlet-name>MetricsServlet</servlet-name>
-        <servlet-class>com.yammer.metrics.reporting.MetricsServlet</servlet-class>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.yammer.metrics.reporting.AdminServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>MetricsServlet</servlet-name>
-        <url-pattern>/metrics</url-pattern>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin/*</url-pattern>
     </servlet-mapping>
     ...
 
-Open the metrics page by entering "http://localhost:8080/gradle-scala-rest-archetype/metrics".
+Open the metrics page by entering "http://localhost:8080/gradle-scala-rest-archetype/admin".
 More information you can find under "http://metrics.codahale.com/getting-started/"
 
 
